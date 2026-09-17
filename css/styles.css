@@ -492,10 +492,12 @@ p {
   background-color: #042c54;
 }
 
+
 .card_link {
   color: #fff;
   border-bottom: 1px solid transparent;
   align-self: flex-start;
+  margin-top: auto;
 }
 
 .card_link:hover {
