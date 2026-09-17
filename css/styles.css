@@ -1,0 +1,640 @@
+/* Подключение шрифтов */
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../fonts/Manrope-Light.ttf);
+}
+
+/* Сброс базовых стилей */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+  outline: none;
+}
+
+/* Общие стили для всего приложения */
+
+body {
+  background: #031b34;
+  padding: 0 2rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a,
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+a:hover,
+button:hover {
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+button:hover {
+  background-color: #ae67fa;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ae67fa;
+}
+
+h2 {
+  font-size: 34px;
+}
+
+h1,
+h2 {
+  font-family: "ManropeBold", sans-serif;
+  background: linear-gradient(90deg, #ae67fa 1.84%, #f49867 102.67%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-family: "ManropeBold", sans-serif;
+  color: #fff;
+  font-size: 24px;
+}
+
+p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.btn {
+  display: flex;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.primary-btn {
+  background-color: #ff4820;
+}
+
+.section {
+  max-width: 1169px;
+  width: 100%;
+}
+
+.lined_header {
+  background: url("../assets/img/gradient_line.svg") no-repeat 0 0 transparent;
+  padding: 1rem 0;
+}
+
+/* Стили для Шапки */
+
+.header {
+  display: flex;
+  max-width: 1169px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  background: #031b34;
+}
+
+.header .header-logo {
+  width: 162px;
+}
+
+.header .header__menu .menu {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.header .header__menu .menu .menu__item a {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+
+.header .header__menu .menu .menu__item:hover a {
+  border-bottom-color: #fff;
+}
+
+.header .header__menu .menu .menu__item.active a {
+  color: #f49867;
+  border-bottom-color: #f49867;
+}
+
+.header .cta_buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+/* Стили для первого экрана (Хиро секция) */
+
+.hero_section {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+  min-height: 60vh;
+  margin: 14rem 0 3rem;
+}
+
+.hero_section .hero_section__left {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 3rem;
+  width: 75%;
+}
+
+.hero_section .hero_section__left .left__description {
+  color: #81afdd;
+}
+
+.hero_section .hero_section__left .left__cta_buttons {
+  display: flex;
+  width: 100%;
+}
+
+.hero_section .hero_section__left .left__cta_buttons input[type="text"] {
+  min-width: 250px;
+  width: 70%;
+  padding: 8px 32px;
+  border-radius: 4px 0 0 4px;
+  border: 1px solid #052d56;
+  border-bottom: none;
+  background-color: #052d56;
+}
+
+.hero_section .hero_section__left .left__cta_buttons .btn {
+  border-radius: 0 4px 4px 0;
+}
+
+.hero_section .hero_section__right {
+  height: 100%;
+}
+
+.hero_section .hero_section__right img {
+  width: 100%;
+}
+
+/* Секция брендов */
+
+.brands_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 6rem 0;
+  column-gap: 3rem;
+}
+
+/* Что такое Chat GPT */
+
+.what_is_chatgpt_section {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  margin: 6rem 0;
+  row-gap: 7rem;
+  background: url(../assets/img/what_is_gpt_3_bg.svg) no-repeat 0 0 / cover;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top {
+  display: flex;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__header {
+  flex: 30%;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__top .top__content {
+  flex: 65%;
+  color: #81afdd;
+  font-size: 14px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle .middle__header {
+  width: 500px;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a {
+  color: #ff8a71;
+  font-size: 16px;
+  border-bottom: 1px solid transparent;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__middle a:hover {
+  border-bottom: 1px solid #ff8a71;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  column-gap: 2rem;
+}
+
+.what_is_chatgpt_section .what_is_chatgpt_section__bottom .bottom__container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.what_is_chatgpt_section
+  .what_is_chatgpt_section__bottom
+  .bottom__container
+  .container__content {
+  color: #81afdd;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* Будущее наступило */
+
+.future_here {
+  display: flex;
+  column-gap: 6rem;
+  margin: 6rem 0 2rem;
+}
+
+.future_here .future_here__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 2rem;
+  flex: 2;
+}
+
+/* .future_here .future_here__left .left__header {
+} */
+
+.future_here .future_here__left .left__cta {
+  color: #f49867;
+  border-bottom: 1px solid transparent;
+}
+
+.future_here .future_here__left a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.future_here .future_here__right {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+}
+
+.future_here .future_here__right .right__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.future_here .future_here__right .right__container .container__header {
+  width: 35%;
+}
+
+.future_here .future_here__right .right__container .container__content {
+  width: 55%;
+  color: #81afdd;
+}
+
+/* Секция "woman" */
+.woman {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 20px;
+  padding: 0rem 2rem;
+  margin: 6rem 0;
+}
+
+.woman .woman__img {
+  width: 50%;              /* половина секции */
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.woman .woman__content {
+  width: 50%;              /* вторая половина */
+  margin-top: 239px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+
+.woman .woman__content .content__subtitle {
+  color: #81AFDD;
+}
+
+.woman .woman__content .content__header {
+  max-width: 73%;       
+}
+
+.woman .woman__content .content__description {
+  color: #81AFDD;
+  max-width: 80%;
+}
+
+.woman .woman__content .content__link {
+  color: #FF8A71;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+}
+
+.woman .woman__content a:hover {
+  border-bottom: 1px solid #f49867;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+/*баннер*/
+.cta_banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  border-radius: 10px;
+  margin: 6rem 0;
+  background: linear-gradient(90deg, #ae67fa 0%, #f49867 100%);
+}
+
+.cta_banner .cta_banner__content {
+  flex-direction: column;
+  row-gap: 0.5rem;
+  max-width: 60%;
+}
+
+.cta_banner .cta_banner__content .content__subtitle {
+  font-size: 12px;
+  color:#0E0E0E;
+}
+
+.cta_banner .cta_banner__content .content__header {
+  line-height: 32px;
+  color:#000000;
+}
+.cta_banner__button {
+  padding: 1rem 4rem;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  font-size: 16px;
+  border-radius: 40px;
+}
+
+.cta_banner__button:hover {
+  background-color: #ae67fa;
+}
+
+/* страница 5 */
+.statia_5 {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem; 
+  margin: 6rem 0;
+}
+
+.statia_header {
+  display: flex;
+  row-gap: 2rem;
+  width: 65%;
+}
+
+.statia_cards {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.statia_cards_left,
+.statia_cards_middles,
+.statia_cards_right {
+  display: flex;                 
+  flex-direction: column;
+}
+.statia_cards_middles,
+.statia_cards_right {
+  row-gap: 2rem;
+}
+.card {
+  display: flex;
+  flex-direction: column; 
+  flex: 1;                   
+}
+
+.card_body {
+  display: flex; 
+  flex: 1;                 
+  padding: 1.5rem;
+  flex-direction: column;
+  row-gap: 1rem;
+  background-color: #042c54;
+}
+
+.card_link {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+  align-self: flex-start;
+}
+
+.card_link:hover {
+  border-bottom-color: #fff;
+}
+
+/* Медиа запросы для адаптива */
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+  }
+  .statia_cards {
+    flex-direction: column; 
+  }
+}
+
+/* шаг в будущее */
+.step_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+  margin: 6rem 0 8rem;
+  text-align: center;
+}
+
+.step_section .step_section__header {
+  max-width: 821px;
+  font-size: 62px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.step_section .step_section__link {
+  padding: 1rem 2rem;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.step_section .step_section__link:hover {
+  background-color: #ae67fa;
+  border-color: #ae67fa;
+  color: #fff;
+}
+
+/* ссылки внизу */
+.links {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 4rem;
+  margin: 6rem 0 4rem;
+}
+
+.links .links__left {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  flex: 1;
+}
+
+.links .links__left .left__logo {
+  font-size: 30px;
+  line-height: 1;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.links .links__left .left__address {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.links .links__left .left__copyright {
+  font-family: "ManropeLight", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+}
+
+.links .links__right {
+  display: flex;
+  column-gap: 4rem;
+  flex: 2;
+  justify-content: space-between;
+}
+
+.links .links__right .right__column {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.links .links__right .right__column .column__header {
+  font-size: 18px;
+}
+
+.links .links__right .right__column .column__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.links .links__right .right__column .column__list .item__link {
+  font-family: "ManropeLight", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  border-bottom: 1px solid transparent;
+}
+
+.links .links__right .right__column .column__list .item__link:hover {
+  border-bottom-color: #fff;
+}
+
+.links .links__right .right__column .column__list .item__text {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* копирайт внизу */
+.copyright {
+  width: 100%;
+  margin-top: 3rem;
+  background-color: #040c18;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.copyright .copyright__text {
+  font-family: "ManropeLight", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+}
+/* Медиа запросы для адаптива */
+
+@media screen and (max-width: 1024px) {
+  .header {
+    flex-direction: column;
+  }
+}
