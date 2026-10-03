@@ -446,14 +446,16 @@ p {
 }
 
 .woman .woman__img {
-  width: 50%;              /* половина секции */
+  width: 50%;
+  /* половина секции */
   height: auto;
   display: block;
   max-width: 100%;
 }
 
 .woman .woman__content {
-  width: 50%;              /* вторая половина */
+  width: 50%;
+  /* вторая половина */
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -464,7 +466,7 @@ p {
 }
 
 .woman .woman__content .content__header {
-  max-width: 73%;       
+  max-width: 73%;
 }
 
 .woman .woman__content .content__description {
@@ -544,7 +546,7 @@ p {
 .statia_cards {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
+  gap: 2rem;
   align-items: stretch;
 }
 
@@ -575,11 +577,13 @@ p {
   background-color: #042c54;
 }
 
+.card_img {
+  width: 100%;
+}
 
 .card_link {
   color: #fff;
   border-bottom: 1px solid transparent;
-  align-self: flex-start;
   margin-top: auto;
 }
 
@@ -589,10 +593,6 @@ p {
 
 /* Медиа запросы для адаптива */
 @media screen and (max-width: 1024px) {
-  .header {
-    flex-direction: column;
-  }
-
   .statia_cards {
     flex-direction: column;
   }
@@ -823,57 +823,89 @@ p {
   .woman {
     flex-direction: column;
     row-gap: 2rem;
+    padding: 0;
   }
 
   .woman .woman__img {
-    width: 75%;
-  }
-
-  .woman .woman__content {
-    align-items: center;
-    text-align: center;
     width: 100%;
   }
 
-  .woman .woman__content .content__link {
-    align-self: center;
-  }
-
-  .statia_5 {
-    gap: 2rem;
-  }
-
-  .statia_header {
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .statia_cards {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .card_img,
-  .card_body {
-    width: 70%;
-    margin: 0 auto;
+  .woman .woman__content {
+    align-items: stretch;
+    text-align: left;
+    width: 100%;
   }
 
   .step_section .step_section__header {
-    font-size: 48px;
+    font-size: 54px;
+  }
+
+  .step_section .step_section__link {
+    font-size: 18px;
   }
 
   .links {
-    row-gap: 2rem;
+    flex-direction: column;
+    row-gap: 3rem;
   }
 
   .links .links__right {
     column-gap: 2rem;
   }
 
+  .links .links__left .left__logo {
+    font-size: 32px;
+  }
+
+  .links .links__left .left__address {
+    font-size: 16px;
+  }
+
+  .links .links__left .left__copyright {
+    font-size: 18px;
+  }
+
+  .links .links__right .right__column .column__header {
+    font-size: 26px;
+  }
+
+  .links .links__right .right__column .column__list .item__link {
+    font-size: 20px;
+  }
+
+  .links .links__right .right__column .column__list .item__text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .statia_5 {
+    gap: 2rem;
+  }
+
+  .statia_header {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .statia_cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .statia_cards_middles,
+  .statia_cards_right {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+  }
+
+  .card_img,
+  .card_body {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 766px) {
@@ -942,21 +974,7 @@ p {
   .step_section .step_section__header {
     font-size: 34px;
   }
-
-  .links {
-    flex-direction: column;
-    row-gap: 3rem;
-    column-gap: 0;
-    margin: 4rem 0;
-  }
-
-  .links .links__right {
-    flex-direction: column;
-    row-gap: 2rem;
-    column-gap: 0;
-  }
 }
-
 
 @media screen and (max-width: 765px) {
   a {
@@ -1030,7 +1048,38 @@ p {
     font-size: 24px;
   }
 
-  .links .links__right .right__column .column__list .item__link {
-    font-size: 14px;
+  .links {
+    align-items: center;
+    text-align: center;
+  }
+
+  .links .links__left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .links .links__right {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    row-gap: 2rem;
+  }
+
+  .links .links__right .right__column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .links .links__right .right__column .column__list {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 426px) {
+
+  .statia_cards_middles,
+  .statia_cards_right {
+    flex-direction: column;
+    row-gap: 1rem;
   }
 }
