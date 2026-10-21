@@ -1,14 +1,17 @@
 export const createLinksLeftTemplate = ({ logo, address, copyright }) => {
   const template = `
     <div class="links__left">
-      <h3 class="left__logo">${logo}</h3>
+      <h3 class="left__logo">
+        ${logo}
+      </h3>
       <p class="left__address">
         ${address}
       </p>
-      <p class="left__copyright">${copyright}</p>
+      <p class="left__copyright">
+        ${copyright}
+      </p>
     </div>
   `;
-
   return template;
 };
 
@@ -16,56 +19,67 @@ export const createLinksColumnItemTemplate = ({ type, title, href }) => {
   switch (type) {
     case "text":
       return `
-        <li>
-          <p class="item__text">
-            ${title}
-          </p>
-        </li>
-      `;
+      <li>
+        <p class="item__text">
+          ${title}
+        </p>
+      </li>
+    `;
 
     default:
       return `
-        <li><a href="${href}" class="item__link">${title}</a></li>
-      `;
+      <li>
+        <a href="${href}" class="item__link">
+          ${title}
+        </a>
+      </li>
+    `;
   }
 };
 
-export const createLinksColumnTemplate = ({ header, items }) => {
+export const createLinksColumnTemplate = (header, items) => {
   const columnItemsTemplate = items
     .map((item) => createLinksColumnItemTemplate(item))
     .join("");
 
   const template = `
     <div class="right__column">
-      <h3 class="column__header">${header}</h3>
+      <h3 class="column__header">
+        ${header}
+      </h3>
       <ul class="column__list">
         ${columnItemsTemplate}
       </ul>
     </div>
   `;
-
   return template;
 };
 
-export const createLinksRightTemplate = (linksColumnsData) => {
-  const linksColumnsTemplate = linksColumnsData
-    .map((column) => createLinksColumnTemplate(column))
-    .join("");
+export const linksTemplate = ({
+  logoData,
+  addressData,
+  copyrightData,
+  linksMenuData,
+  companyData,
+  contactsData,
+}) => {
+  const linksLeftTemplate = createLinksLeftTemplate({
+    logo: logoData.title,
+    address: addressData.title,
+    copyright: copyrightData.title,
+  });
 
-  const template = `
+  const columnLinks = createLinksColumnTemplate("Ссылки", linksMenuData);
+  const columnCompany = createLinksColumnTemplate("Компания", companyData);
+  const columnContacts = createLinksColumnTemplate("Контакты", contactsData);
+
+  const resultTemplate = `
+    ${linksLeftTemplate}
     <div class="links__right">
-      ${linksColumnsTemplate}
+      ${columnLinks}
+      ${columnCompany}
+      ${columnContacts}
     </div>
   `;
-
-  return template;
-};
-
-export const linksTemplate = ({ linksLeftData, linksColumnsData }) => {
-  const linksLeftTemplate = createLinksLeftTemplate(linksLeftData);
-  const linksRightTemplate = createLinksRightTemplate(linksColumnsData);
-
-  const resultTemplate = linksLeftTemplate + linksRightTemplate;
-
   return resultTemplate;
 };

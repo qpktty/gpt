@@ -1,70 +1,70 @@
-const linksLeftData = {
-  logo: "GPT-3",
-  address: "ул. Профессора Поздеева, 13, к. Г,<br />Пермь, Пермский край, 614013",
-  copyright: "Все права защищены",
+export const logoData = {
+  title: "GPT-3",
 };
 
-const linksColumnsData = [
+export const addressData = {
+  title: "ул. Профессора Поздеева, 13, к. Г,<br />Пермь, Пермский край, 614013",
+};
+
+export const copyrightData = {
+  title: "Все права защищены",
+};
+
+export const linksMenuData = [
   {
-    header: "Ссылки",
-    items: [
-      {
-        title: "Овероны",
-        href: "#"
-      },
-      {
-        title: "Соц. сети",
-        href: "#"
-      },
-      {
-        title: "Счетчики",
-        href: "#"
-      },
-      {
-        title: "Контакты",
-        href: "#"
-      },
-    ],
+    title: "Овероны",
+    href: "#",
   },
   {
-    header: "Компания",
-    items: [
-      {
-        title: "Условия использования",
-        href: "#"
-      },
-      {
-        title: "Перс. данные",
-        href: "#"
-      },
-      {
-        title: "Контакты",
-        href: "#"
-      },
-    ],
+    title: "Соц. сети",
+    href: "#",
   },
   {
-    header: "Контакты",
-    items: [
-      {
-        type: "text",
-        title: "ул. Профессора<br />Поздеева, 13, к.Г, Пермь"
-      },
-      {
-        title: "+7 (342) 2-198-520",
-        href: "#"
-      },
-      {
-        title: "info@pstu.ru",
-        href: "#"
-      },
-    ],
+    title: "Счетчики",
+    href: "#",
+  },
+  {
+    title: "Контакты",
+    href: "#",
+  },
+];
+
+export const companyData = [
+  {
+    title: "Условия использования",
+    href: "#",
+  },
+  {
+    title: "Перс. данные",
+    href: "#",
+  },
+  {
+    title: "Контакты",
+    href: "#",
+  },
+];
+
+export const contactsData = [
+  {
+    title: "ул. Профессора<br />Поздеева, 13, к.Г, Пермь",
+  },
+  {
+    title: "+7 (342) 2-198-520",
+    href: "#",
+  },
+  {
+    title: "info@pstu.ru",
+    href: "#",
   },
 ];
 
 const linksData = {
-  linksLeftData,
-  linksColumnsData,
+  logoData,
+  addressData,
+  copyrightData,
+  linksMenuData,
+  companyData,
+  contactsData,
 };
 
 export default linksData;

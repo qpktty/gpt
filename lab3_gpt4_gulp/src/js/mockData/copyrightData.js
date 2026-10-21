@@ -1,5 +1,7 @@
+const copyrightText = "© 2023 GPT-3. Все права защищены";
+
 const copyrightData = {
-  text: "© 2023 GPT-3. Все права защищены",
+  text: copyrightText,
 };
 
 export default copyrightData;
