@@ -3,7 +3,8 @@ export const logoData = {
 };
 
 export const addressData = {
-  title: "ул. Профессора Поздеева, 13, к. Г,<br />Пермь, Пермский край, 614013",
+  line1: "ул. Профессора Поздеева, 13, к. Г,",
+  line2: "Пермь, Пермский край, 614013",
 };
 
 export const copyrightData = {

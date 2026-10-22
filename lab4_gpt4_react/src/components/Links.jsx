@@ -1,5 +1,19 @@
 import linksData from "../mockData/linksData";
 
+export const LinksLogo = ({ logoData }) => (
+  <h3 className="left__logo">{logoData.title}</h3>
+);
+
+export const LinksAddress = ({ addressData }) => (
+  <p className="left__address">
+    {addressData.line1} <br /> {addressData.line2}
+  </p>
+);
+
+export const LinksCopyright = ({ copyrightData }) => (
+  <p className="left__copyright">{copyrightData.title}</p>
+);
+
 export const LinkItem = ({ item }) => {
   switch (item.type) {
     case "text":
@@ -45,11 +59,11 @@ const Links = () => {
   return (
     <>
       <div className="links__left">
-        <h3 className="left__logo">{logoData.title}</h3>
-        <p className="left__address" dangerouslySetInnerHTML={{ __html: addressData.title }} />
-        <p className="left__copyright">{copyrightData.title}</p>
+        <LinksLogo logoData={logoData} />
+        <LinksAddress addressData={addressData} />
+        <LinksCopyright copyrightData={copyrightData} />
       </div>
-      
+
       <div className="links__right">
         <LinksColumn header="Ссылки" items={linksMenuData} />
         <LinksColumn header="Компания" items={companyData} />
