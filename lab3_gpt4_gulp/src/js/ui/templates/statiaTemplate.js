@@ -33,7 +33,7 @@ export const createStatiaCardBodyTemplate = ({
 };
 
 export const createStatiaLeftTemplate = ({
-  img: { src, src2, src3, src4, src5 },
+  img: { src },
   data,
   header,
   link: { href, title },
@@ -46,7 +46,7 @@ export const createStatiaLeftTemplate = ({
 
   const template = `
     <div class="statia_cards_left">
-      <img class="card_img" src="${src}"/>
+      <img class="card_img" src="${src}" />
       ${bodyTemplate}
     </div>
   `;
@@ -54,8 +54,8 @@ export const createStatiaLeftTemplate = ({
   return template;
 };
 
-export const createStatiaMiddleTemplate = ({
-  img: { src, src2, src3, src4, src5},
+export const createStatiaCardTemplate = ({
+  img: { src },
   data,
   header,
   link: { href, title },
@@ -66,60 +66,38 @@ export const createStatiaMiddleTemplate = ({
     link: { href, title },
   });
 
-  const card1 = `
+  const template = `
     <div class="card">
-      <img class="card_img" src="${src2}"/>
+      <img class="card_img" src="${src}" />
       ${bodyTemplate}
     </div>
   `;
 
-  const card2 = `
-    <div class="card">
-      <img class="card_img" src="${src3}"/>
-      ${bodyTemplate}
-    </div>
-  `;
+  return template;
+};
+
+export const createStatiaMiddleTemplate = (cards) => {
+  const cardsTemplate = cards
+    .map((card) => createStatiaCardTemplate(card))
+    .join("");
 
   const template = `
     <div class="statia_cards_middles">
-      ${card1}
-      ${card2}
+      ${cardsTemplate}
     </div>
   `;
 
   return template;
 };
 
-export const createStatiaRightTemplate = ({
-  img: { src, src2, src3, src4, src5 },
-  data,
-  header,
-  link: { href, title },
-}) => {
-  const bodyTemplate = createStatiaCardBodyTemplate({
-    data,
-    header,
-    link: { href, title },
-  });
-
-  const card1 = `
-    <div class="card">
-      <img class="card_img" src="${src4}"/>
-      ${bodyTemplate}
-    </div>
-  `;
-
-  const card2 = `
-    <div class="card">
-      <img class="card_img" src="${src5}"/>
-      ${bodyTemplate}
-    </div>
-  `;
+export const createStatiaRightTemplate = (cards) => {
+  const cardsTemplate = cards
+    .map((card) => createStatiaCardTemplate(card))
+    .join("");
 
   const template = `
     <div class="statia_cards_right">
-      ${card1}
-      ${card2}
+      ${cardsTemplate}
     </div>
   `;
 
@@ -128,18 +106,25 @@ export const createStatiaRightTemplate = ({
 
 export const statiaTemplate = ({
   statiaHeader,
-  statiaCardsData,
+  statiaCardsLeftData,
+  statiaCardsMiddleData,
+  statiaCardsRightData,
 }) => {
-  const headerTemplate = createStatiaHeaderTemplate(statiaHeader);
+  const headerTemplate =
+    createStatiaHeaderTemplate(statiaHeader);
 
-  const leftTemplate = createStatiaLeftTemplate(statiaCardsData);
+  const leftTemplate =
+    createStatiaLeftTemplate(statiaCardsLeftData);
 
-  const middlesTemplate = createStatiaMiddleTemplate(statiaCardsData);
+  const middlesTemplate =
+    createStatiaMiddleTemplate(statiaCardsMiddleData);
 
-  const rightsTemplate = createStatiaRightTemplate(statiaCardsData);
+  const rightsTemplate =
+    createStatiaRightTemplate(statiaCardsRightData);
 
   const resultTemplate = `
     ${headerTemplate}
+
     <div class="statia_cards">
       ${leftTemplate}
       ${middlesTemplate}
